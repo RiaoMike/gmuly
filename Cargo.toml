@@ -1,0 +1,34 @@
+[package]
+name = "gmuly"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ark-ff = "0.4"
+ark-std = "0.4"
+ark-poly = "0.4"
+ark-test-curves = { version = "0.4", features = ["bls12_381_scalar_field"], optional = true }
+
+[dev-dependencies]
+ark-test-curves = { version = "0.4", features = ["bls12_381_scalar_field"] }
+
+[features]
+default = []
+examples = ["ark-test-curves"]
+
+[[example]]
+name = "matrix_operations"
+required-features = ["ark-test-curves"]
+
+[[example]]
+name = "mle_demo"
+required-features = ["ark-test-curves"]
+
+[[example]]
+name = "sumcheck_demo"
+required-features = ["ark-test-curves"]
+
+[[example]]
+name = "mle_sparse_conversion"
+required-features = ["ark-test-curves"]
+
